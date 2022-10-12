@@ -1,0 +1,62 @@
+{% extends "main/layout.html" %}
+{% block content %}
+  <div class="home">
+    
+    <div class="container">
+      <h1 class="text-center text-light mb-3">Our Dishes</h1><br><br>
+      <h3 id = "snack">Snacks</h3><br>
+      <div class="row row1" id = "snack">
+        {% for item in snacks %}
+            <div class="col-sm-4">
+                <div class="card mb-3" style="height: fit-content; overflow: auto;">
+                  <img src="{{ item.image.url }}" style="height: 250px;">
+                    <div class="card-body text-center" style="background-color: #343a40">      
+                              
+                      <h5 class="text-center" ><a href="{% url 'main:dishes' item.slug %}" style= "color:#c4c4c4">{{ item.title }} <br></a><span class="badge badge-{{ item.label_colour }}">{{ item.labels }}</span></h5>
+                      <p class="text-center">{{ item.description }}</p>
+                      <h5 class="text-center">₹{{ item.price }}</h5>
+                      <a href="{% url 'main:dishes' item.slug %}" class="btn btn-success">View Details</a>
+                    </div>
+                </div>
+            </div>            
+        {% endfor %}
+      </div>
+      <br><br>
+      <h3 id = "mc">Main Course</h3><br>
+      <div class="row row2" >
+        {% for item in mc %}
+            <div class="col-sm-4">
+                <div class="card mb-3" style="height: fit-content; overflow: auto;">
+                  <img src="{{ item.image.url }}" style="height: 250px;">
+                    <div class="card-body text-center" style="background-color: #343a40">      
+                              
+                      <h5 class="text-center" ><a href="{% url 'main:dishes' item.slug %}" style= "color:#c4c4c4">{{ item.title }} <br></a><span class="badge badge-{{ item.label_colour }}">{{ item.labels }}</span></h5>
+                      <p class="text-center">{{ item.description }}</p>
+                      <h5 class="text-center">₹{{ item.price }}</h5>
+                      <a href="{% url 'main:dishes' item.slug %}" class="btn btn-success">View Details</a>
+                    </div>
+                </div>
+            </div>            
+        {% endfor %}
+      </div>
+      <br><br>
+      <h3 id="bd">Beverages & Drinks</h3><br>
+      <div class="row row3" >
+        {% for item in bd %}
+            <div class="col-sm-4">
+                <div class="card mb-3" style="height: fit-content; overflow: auto;">
+                  <img src="{{ item.image.url }}" style="height: 250px;">
+                    <div class="card-body text-center" style="background-color: #343a40">      
+                              
+                      <h5 class="text-center" ><a href="{% url 'main:dishes' item.slug %}" style= "color:#c4c4c4">{{ item.title }} <br></a><span class="badge badge-{{ item.label_colour }}">{{ item.labels }}</span></h5>
+                      <p class="text-center">{{ item.description }}</p>
+                      <h5 class="text-center">₹{{ item.price }}</h5>
+                      <a href="{% url 'main:dishes' item.slug %}" class="btn btn-success">View Details</a>
+                    </div>
+                </div>
+            </div>            
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

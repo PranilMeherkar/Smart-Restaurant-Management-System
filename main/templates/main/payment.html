@@ -1,0 +1,14 @@
+{% extends "main/layout.html" %}
+{% block content %}
+  <div class="home">
+      <h3 style="text-align:center;margin:50px 0px">Scan the QR code and make Payment</h3>
+    <div style="margin:auto;height:300px;width:300px;background-color:white">
+        <img style="height:300px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/220px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="QR code">
+    </div> 
+    <br><br> 
+    <div style="margin:0% 44%"> 
+        <a class="btn btn-primary" href="{% url 'main:payment-done' %}">Payment Done</a> 
+    </div>
+     
+  </div>
+{% endblock content %}
